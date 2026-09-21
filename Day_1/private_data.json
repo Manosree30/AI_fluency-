@@ -1,0 +1,48 @@
+{
+    "student": "Student",
+    "monthly_budget": 5000,
+    "expenses": [
+        {
+            "date": "2026-09-01",
+            "category": "Food",
+            "description": "Lunch",
+            "amount": 120
+        },
+        {
+            "date": "2026-09-02",
+            "category": "Travel",
+            "description": "Bus",
+            "amount": 80
+        },
+        {
+            "date": "2026-09-03",
+            "category": "Food",
+            "description": "Dinner",
+            "amount": 150
+        },
+        {
+            "date": "2026-09-04",
+            "category": "Shopping",
+            "description": "Notebook",
+            "amount": 200
+        },
+        {
+            "date": "2026-09-05",
+            "category": "Food",
+            "description": "Snacks",
+            "amount": 70
+        },
+        {
+            "date": "2026-09-06",
+            "category": "Travel",
+            "description": "Auto",
+            "amount": 100
+        },
+        {
+            "date": "2026-09-07",
+            "category": "Food",
+            "description": "Lunch",
+            "amount": 130
+        }
+    ]
+}
