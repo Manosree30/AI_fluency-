@@ -1,0 +1,46 @@
+DAY 4 - LLM MEMORY ESTIMATOR
+=================================================================
+
+Available memory: 15.4 GB
+Runtime overhead: 1.0 GB
+
+-----------------------------------------------------------------
+Model       : 7B Q4 - 4K
+Parameters  : 7 B
+Precision   : Q4
+Context     : 4096 tokens
+Weights     : 3.26 GB
+KV cache    : 0.50 GB
+Overhead    : 1.00 GB
+Total       : 4.76 GB
+Fits in 15.4 GB? YES
+-----------------------------------------------------------------
+Model       : 7B Q4 - 8K
+Parameters  : 7 B
+Precision   : Q4
+Context     : 8192 tokens
+Weights     : 3.26 GB
+KV cache    : 1.00 GB
+Overhead    : 1.00 GB
+Total       : 5.26 GB
+Fits in 15.4 GB? YES
+-----------------------------------------------------------------
+Model       : 7B Q8 - 4K
+Parameters  : 7 B
+Precision   : Q8
+Context     : 4096 tokens
+Weights     : 6.52 GB
+KV cache    : 0.50 GB
+Overhead    : 1.00 GB
+Total       : 8.02 GB
+Fits in 15.4 GB? YES
+-----------------------------------------------------------------
+Model       : 8B Q4 - 8K
+Parameters  : 8 B
+Precision   : Q4
+Context     : 8192 tokens
+Weights     : 3.73 GB
+KV cache    : 1.00 GB
+Overhead    : 1.00 GB
+Total       : 5.73 GB
+Fits in 15.4 GB? YES
