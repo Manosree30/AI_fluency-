@@ -1,0 +1,129 @@
+(.venv) (base) PS C:\Users\manos\OneDrive\Desktop\AI_fluency-\Day_3> python with_tool.py
+
+======================================================================
+QUESTION:
+What is an AI agent?
+
+NO TOOL CALL
+
+FINAL ANSWER:
+An **AI agent** is a software entity that perceives its environment through sensors, reasons about what it perceives, and takes actions (via actuators) to achieve a goal or maximize some notion of reward. In other words, it’s a system that **observes**, **decides**, and **acts**—often autonomously and continuously—based on data and learned or programmed knowledge.
+
+---
+
+## Core Elements of an AI Agent
+
+| Element | What It Is | Typical Implementation |
+|---------|------------|------------------------|
+| **Perception (Sensors)** | How the agent gathers information about its surroundings. | Camera feeds, microphones, APIs, data streams, game state snapshots, web crawlers, etc. |
+| **Knowledge / Model** | The internal representation of the world and the agent’s own capabilities. | Neural networks, decision trees, probabilistic models, knowledge graphs, rule‑bases, etc. |
+| **Decision‑Making (Policy / Planner)** | The logic that turns perceptions + knowledge into a chosen action. | Reinforcement‑learning policies, planning algorithms (A*, Monte‑Carlo Tree Search), heuristic rules, LLM prompts, etc. |
+| **Action (Actuators)** | How the agent influences the environment. | Sending commands to a robot arm, posting a reply in a chat, triggering an API call, moving a game character, etc. |
+| **Goal / Reward Signal** | The objective the agent strives to accomplish or improve. | Maximize score, minimize cost, satisfy user request, keep a robot upright, etc. |
+
+---
+
+## Types of AI Agents
+
+| Category | Description | Example |
+|----------|-------------|---------|
+| **Reactive Agents** | Respond directly to stimuli without internal state. | A thermostat that turns heating on/off based on temperature. |
+| **Model‑Based (Deliberative) Agents** | Build an internal model of the world to plan ahead. | A self‑driving car that predicts traffic flow and plans routes. |
+| **Learning Agents** | Improve their behavior over time using data. | A recommendation system that updates its suggestions as you click. |
+| **Autonomous Agents** | Operate with minimal human supervision. | A warehouse robot that picks and places items all day. |
+| **Collaborative (Multi‑Agent) Systems** | Multiple agents cooperate or compete to achieve shared or individual goals. | Swarms of drones coordinating to map a disaster zone. |
+| **Conversational Agents** | Specialized for natural‑language interaction. | ChatGPT, virtual assistants (Siri, Alexa). |
+| **Embodied Agents** | Have a physical presence (robots, drones). | Boston Dynamics' Spot robot. |
+| **Software Agents** | Exist purely in digital realms (scripts, bots). | Trading bots on stock markets, game AI opponents. |
+
+---
+
+## How an AI Agent Works (High‑Level Flow)
+
+1. **Sense** – Collect raw data (e.g., images, text, sensor readings).  
+2. **Interpret** – Preprocess and feed data into a model to infer the current state (e.g., object detection, intent classification).  
+3. **Plan/Decide** – Use a policy or planner to select the best action given the inferred state and the goal.  
+4. **Act** – Execute the chosen action (send a command, produce a response, move a motor).  
+5. **Observe Outcome** – Receive feedback (reward, error signal, new sensor data).  
+6. **Learn/Update** – Adjust the model or policy to improve future decisions (optional, for learning agents).
+
+---
+
+## Real‑World Examples
+
+| Domain | AI Agent in Action |
+|--------|-------------------|
+| **Customer Support** | A chatbot that reads a user's query, determines intent, fetches relevant knowledge‑base articles, and replies—learning from satisfaction ratings. |
+| **Robotics** | A warehouse robot that scans shelves, plans a path to retrieve an item, moves safely around obstacles, and updates its map as the layout changes. |
+| **Finance** | An algorithmic trading agent that watches market data, predicts price movements, and places buy/sell orders while managing risk. |
+| **Gaming** | NPCs that use reinforcement learning to adapt strategies against human players, making each match feel fresh. |
+| **Healthcare** | A diagnostic assistant that examines radiology images, proposes possible conditions, and suggests next tests, improving its predictions from clinician feedback. |
+| **Smart Homes** | An energy‑management agent that learns household occupancy patterns, predicts heating/cooling needs, and optimizes electricity usage. |
+
+---
+
+## Key Technologies Behind Modern AI Agents
+
+- **Machine Learning / Deep Learning** – For perception (vision, speech) and policy learning.
+- **Reinforcement Learning (RL)** – Formalism for agents that learn via trial‑and‑error rewards.
+- **Large Language Models (LLMs)** – Power conversational and reasoning abilities in text‑based agents.
+- **Planning & Search Algorithms** – A*, Dijkstra, Monte‑Carlo Tree Search for deliberative agents.
+- **Probabilistic Reasoning** – Bayesian networks, POMDPs for dealing with uncertainty.
+- **Control Theory** – For low‑level actuation in robotics (PID controllers, model predictive control).
+- **Multi‑Agent Frameworks** – Tools like ROS (Robot Operating System) or OpenAI Gym for coordination.
+
+---
+
+## Why AI Agents Matter
+
+- **Automation** – They can handle repetitive or dangerous tasks, freeing humans for higher‑level work.
+- **Scalability** – Software agents can serve millions of users simultaneously (e.g., chatbots).
+- **Adaptivity** – Learning agents improve over time, staying relevant as environments evolve.
+- **Personalization** – Agents can tailor actions to individual preferences (recommendations, assistants).
+
+---
+
+### TL;DR
+
+An AI agent is a perception‑decision‑action loop powered by algorithms that let it understand its environment, reason about goals, and act to achieve them—often improving over time. Whether it’s a chatbot answering your questions, a robot navigating a warehouse, or a trading bot chasing profits, the underlying idea is the same: **sense, think, act**.
+
+======================================================================
+QUESTION:
+If I buy 5 notebooks at ₹60 each, what is the total cost?
+
+TOOL CALL:
+Tool name: calculate_expense
+Arguments: {'amount': 60, 'quantity': 5}
+TOOL RESULT:
+Total expense = ₹300.00
+
+FINAL ANSWER:
+The total cost for 5 notebooks at ₹60 each is **₹300**.
+
+======================================================================
+QUESTION:
+What is the difference between a tool and a tool call?
+
+NO TOOL CALL
+
+FINAL ANSWER:
+**Tool vs. Tool Call – What’s the Difference?**
+
+| Aspect | **Tool** | **Tool Call** |
+|--------|----------|---------------|
+| **What it is** | A *capability* that the system (ChatGPT) can use. In practice a tool is a function or external service that has been registered for the model to call (e.g., a calculator, a weather API, a database lookup, etc.). | The *act* of invoking that capability. A tool call is the request the model sends to the system to run the tool with specific arguments. |
+| **Definition** | A piece of code described in the “functions” section of the system prompt (or built‑in, like the browser tool). It includes a name, a parameter schema, and a description of what it does. | A JSON‑formatted message that the model emits, containing the tool’s name and the concrete values for its parameters. The system then executes the tool and returns the result. |
+| **Analogy** | Think of a tool as a **remote control button** labeled “Turn On Light.” It tells you *what* you can do. | A tool call is pressing that button with a *specific* setting: “Turn on the living‑room light at 75 % brightness.” |
+| **Lifecycle** | Defined once (or a few times) when the session starts. It remains static for the duration of the conversation unless the developer adds or removes tools. |Occurs many times, possibly zero, one, or many per conversation, each time the model decides it needs that capability to answer the user. |
+| **Visibility to the model** | The model *knows* the tool’s name, description, and input schema, so it can decide when it would be useful. | The model *produces* a tool‑call message, which the orchestrating system interprets and runs. |
+| **Result handling** | The tool itself returns a response (e.g., a number, a string, structured data). | After execution, the system sends the tool’s result back to the model as a normal message, allowing the model to incorporate that information into its next reply. |
+| **Example (using the `calculate_expense` tool you have)** | **Tool definition** (already present in the system prompt):<br>```json<br>{ "name": "calculate_expense", "description": "Calculate the total expense when the price of one item and the quantity are given.", "parameters": { "type": "object", "properties": { "amount": { "type": "number","description": "Price of one item in Indian Rupees" }, "quantity": { "type": "number", "description": "Number of items" } }, "required": ["amount","quantity"] } }<br>``` | **Tool call** (what the model would output):<br>```json<br>{ "tool": "calculate_expense", "arguments": { "amount": 250, "quantity": 4 } }<br>``` The system then runs the function and returns something like `{"total": 1000}`. |
+| **Who creates it?** | The **developer** (or the platform) writes the tool definition and registers it with the model. | The **model** decides to issue a call based on the conversation context and the tools available. |
+| **Error handling** | Defined by the tool’s implementation (e.g., type checks, rate limits). | If the model sends malformed arguments, the orchestrator can reject the call and ask the model to correct it, or return an error message. |
+
+### TL;DR
+- A **tool** is a *function* the system knows about and can use.  
+- A **tool call** is the *request* the model makes to actually run that function with specific inputs.  
+
+The model “knows” the toolbox, and when it thinks a tool will help answer the user, it emits a tool‑call message. The surrounding infrastructure executes the tool and feeds the result back, allowing the model to produce a richer, data‑driven response.
+(.venv) (base) PS C:\Users\manos\OneDrive\Desktop\AI_fluency-\Day_3> 
